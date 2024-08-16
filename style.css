@@ -1,0 +1,87 @@
+.titulo{
+    text-align: center;
+}
+
+body{
+    background-color: rgb(31, 29, 24);
+    margin: 0;
+}
+
+.container{
+    margin: 0px;
+    
+    place-items: center;
+    text-align: center;
+    width: 450px; 
+    height: 470px;
+    position: absolute  ;
+    top: 28%;
+    left: 28%;
+    background-color: rgb(255, 255, 255);
+    border: 7px solid rgb(158, 144, 66);
+    border-radius: 70px;
+    box-shadow: 10px, 10px, 50px, black;
+
+}
+
+input{
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 200px;
+    height: 20px;
+}
+
+button{
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgb(163, 163, 163);
+    width: 90px;
+    height: 20px;
+}
+
+#endereco{
+color: rgb(228, 91, 0);
+font-size: 25px;
+}
+
+.page{
+    margin: 0px;
+    display: grid ;
+    place-items: center;
+    text-align: center;
+    width: 450px; 
+    height: 470px;
+    position: absolute  ;
+    top: 28%;
+    left: 52%;
+    background-color: rgb(255, 255, 255);
+    border: 7px solid rgb(158, 144, 66);
+    border-radius: 70px;
+    box-shadow: 10px, 10px, 50px, black;
+}
+
+.titulo{
+    font-size: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav{
+    
+
+    background-color: rgb(158, 144, 66);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a:visited{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+/*
+a:link{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}*/

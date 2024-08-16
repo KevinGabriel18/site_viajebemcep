@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEP</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body background="https://images.unsplash.com/photo-1496950866446-3253e1470e8e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8fA%3D%3D">
+    
+    <nav>
+        <h1 class="title">Viaje Bem</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cep.html">Cep</a></li>
+            <li><a href="senai.html">Senai</a></li>
+            
+        </ul>
+    </nav>
+    
+    
+    <div class="container"><img src="https://cdn.iconscout.com/icon/free/png-256/cep-26-1174995.png" alt="cep">
+    <h1 class "titulo"> Consulta de CEP</h1><br>
+    <br>
+    <label for="cepInput">Digite o CEP:</label>
+    <input type="text" id="cepInput">
+    <button onclick="buscarEndereco()">Buscar</button>
+    <div id="endereco"></div>
+</div>
+    <script>
+        function buscarEndereco() {
+            var cep = document.getElementById('cepInput').value;
+            var url = `https://viacep.com.br/ws/${cep}/json/`;
+            
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if(data.erro) {
+                    document.getElementById('endereco').innerText = "CEP não encontrado.";
+                } else {
+                    var endereco = `CEP: ${data.cep}, ${data.logradouro}, ${data.bairro}, ${data.localidade}, ${data.uf}`;
+                    document.getElementById('endereco').innerText = endereco;
+                }
+            })
+            .catch(error => console.error('Erro:', error));
+        }
+    </script>
+    <div class="page">
+        <form method="POST" class="formLogin">
+            <h1>Login</h1>
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
+            <label for="email">E-mail</label><br>
+            <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+            <label for="password">Senha</label><br>
+            <input type="password" placeholder="Digite seu e-mail" />
+            <a href="/">Esqueci minha senha</a>
+            <input type="submit" value="Acessar" class="btn" />
+        </form>
+    </div>
+
+</body>
+</html>
